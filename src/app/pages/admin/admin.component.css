@@ -1,0 +1,48 @@
+table{
+    width: 80%;
+    margin:0 auto;
+    margin-top: 1rem;
+
+}
+
+th.mat-sort-header-sorted{
+    color: black;
+}
+
+.table-button-row button{
+    margin: 12px;
+}
+.button-row button{
+    margin: 8px;
+}
+#procedure-img{
+    width: 200px;
+    height: 200px;
+  }
+  .procedure-card{
+  
+    font-size: 22px;
+    text-align: center;
+    color: white;
+  }
+
+#img-background{
+  background-image: url('./../../../assets/ptd.png');
+  background-size: cover;
+  position: relative;
+  z-index: -2;
+}
+.overlay {
+  background-color: #000;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+.jumbotron {
+    color: white;
+    margin-top: 1rem;
+}

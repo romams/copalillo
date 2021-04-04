@@ -1,0 +1,17 @@
+<button mat-icon-button class="close-button" [mat-dialog-close]="true">
+    <mat-icon class="close-icon" color="warn">close</mat-icon>
+</button>
+<div class="modal-content">
+    <div class="modal-header">
+      <h2 class="modal-title"> Motivo: {{ razon}} </h2>
+    </div>
+    <div class="modal-body">
+        <h3> <b>Nombre:</b> {{ nombre }} </h3>
+        <h3> <b>Correo:</b> {{ correo }} </h3>
+        <h3> <b>Teléfono:</b> {{ telefono }} </h3>
+        <hr>
+        <h3> {{ contenido }} </h3>
+        
+    </div>
+</div>
+

@@ -1,0 +1,110 @@
+
+<div class="modal-body">
+
+  <div class="row">
+
+
+    <div class="col md-6">
+
+      <!-- Comporbante de Pago -->
+      <div #content id="datacontent">
+    
+          <div class="card">
+            <img src="./../../../../../assets/logo_ayuntamiento.png" alt="">
+              <h2 class="title-ticket">Comprobante de cita</h2>
+              <div class="card-body">
+                <h5 class="card-title">Nombre: {{ nombre }}</h5>
+                <h5 class="card-title">Fecha: {{ fecha | date:'dd/MM/yyyy' }} </h5>
+                <h5 class="card-title">Hora: {{ hora }} </h5>
+                <h5 class="card-title">Oficina: {{ depto }} </h5>
+                <h6 class="card-subtitle mb-2 text-muted"></h6>
+                
+                <div id="div1"></div>
+    
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Concepto</th>
+                      <th scope="col">Monto</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th> 
+                      <td> {{ procedureName }} </td>
+                      <td> ${{ price }} </td>
+                    </tr>
+                  </tbody>
+                </table>
+    
+                <p class="card-text">
+                  Recuerde asistir a su cita con todas las medidas de seguridad ante el 
+                  <i class="badge badge-danger">
+                    #COVID-19.
+                  </i>
+                </p>
+              </div>
+          </div>
+    
+      </div>
+
+    </div>
+
+
+    <div class="col md-6">
+
+      <div class="modal-form">
+    
+        <div class="container">
+          <h2 class="text-center">Seleccione un método de pago</h2><hr class="hr-circle">
+
+          <h3>Tarjeta de crédito o débito</h3>
+          <!-- Pagar con targeta de crédito - Stripe -->
+          <div class="credit-card">
+    
+            <div>
+    
+              <div class="form-control" #cardInfo></div>
+    
+              <div class="alert alert-danger" role="alert" *ngIf="cardError">
+    
+                {{ cardError}}
+    
+              </div>
+    
+            </div>
+    
+            <button id="button-pay" type="button" mat-raised-button color="primary" (click)="onPay()"> 
+              <mat-icon>payment</mat-icon>
+              Pagar ${{ price }}.00 MXN
+            </button>
+
+          </div>
+
+          <hr class="hr-text" data-content="O">
+
+          <!-- Pagar en tesoreria -->
+          <div class="row">
+            <button id="tesoreria-button" type="button" mat-raised-button color="primary" class="button-margin" (click)="onClickTesoreria()">
+              <mat-icon>payment</mat-icon>
+                En tesoreria
+            </button>
+          </div>
+
+          <!-- Pagar con PayPal -->
+          <div #paypal></div>
+          
+    
+        </div>
+    
+      </div>
+
+
+      
+    </div>
+  </div>
+
+
+
+</div>

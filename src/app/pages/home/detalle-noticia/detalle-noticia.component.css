@@ -1,0 +1,50 @@
+.titulo{
+    margin-top: 2rem;
+    margin-bottom: .25rem;
+    font-size: 2.5rem;
+}
+
+img{
+    width: 100%;
+}
+h2{
+    text-align: center;
+}
+
+.blog-post-meta{
+    margin-bottom: 1.25rem;
+    color: #999;
+}
+p{
+    white-space: pre-line;
+}
+
+.title-caption{
+    position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      padding: 10px;
+      padding-top: 10px;
+      padding-right: 10px;
+      padding-bottom: 10px;
+      padding-left: 10px;
+      text-align: center;
+      background-color: rgba(0,0,0,0.75);
+      -webkit-transition: all 0.5s;
+      -moz-transition: all 0.5s;
+      -ms-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      transition: all 0.5s;
+      transition-property: all;
+      transition-duration: 0.5s;
+      transition-timing-function: ease;
+      transition-delay: 0s;
+}
+.title-caption a{
+    color: #FFFFFF;
+}
+
+#mas_noticias{
+    margin-top: 4rem;
+}

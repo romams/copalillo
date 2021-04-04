@@ -1,0 +1,25 @@
+.modal-form{
+    padding: 1rem 0;
+}
+
+.modal-form .full-width-input{
+    width: 100%;
+}
+
+.button-margin{
+    margin: 1rem;;
+}
+
+#datacontent {
+    outline: 1px solid #673ab7;
+}
+i{
+    font-size: 12px;
+}
+.title-ticket{
+    margin: 0;
+    text-align: center;
+}
+img{
+    width: 40%;
+}

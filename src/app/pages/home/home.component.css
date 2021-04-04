@@ -1,0 +1,52 @@
+#img-background{
+  background-image: url('../../../assets/ptd.png');
+  background-size: cover;
+  position: relative;
+  z-index: -2;
+}
+.overlay {
+  background-color: #000;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+}
+.jumbotron {
+  text-align: center;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  text-shadow: 2px 2px #000;
+  height: 51%;
+}
+#logo-home{
+  width: 200px;
+}
+
+.home-subtitle{
+  font-size: 30px;
+  color: #5f8eb4;
+  text-align: center;
+}
+
+#procedure-img{
+  width: 280px;
+  height: 280px;
+}
+.procedure-card{
+
+  font-size: 22px;
+  text-align: center;
+}
+
+.procedure-card a {
+  color:white;
+  text-decoration: none;
+}
+
+#banner-covid{
+  width: 100%;
+  cursor: pointer;
+}

@@ -1,0 +1,105 @@
+<div>
+
+    <mat-toolbar color="primary">
+
+        <ng-container *ngIf="isAdmin == 'admin'">
+
+            <button mat-icon-button (click)="onToggleSidenav()">
+                <mat-icon>menu</mat-icon>
+            </button>
+            
+        </ng-container>
+
+            <a mat-button routerLink="/">H. Ayuntamiento de Copalillo</a>
+
+            <span class="spacer"></span>
+            
+            <div *ngIf="!isLogged; else viewLogout" fxShow="true" fxHide.lt-md="true">
+
+                <a mat-button routerLink="/">
+                    <mat-icon>home</mat-icon>
+                    Inicio
+                </a>
+
+                <a mat-button routerLink="/noticias">
+                    <mat-icon>article</mat-icon>
+                    Sala de prensa
+                </a>
+                <a mat-button routerLink="/tramites">
+                    <mat-icon>notes</mat-icon>
+                    Trámites y servicios
+                </a>
+                <a mat-button routerLink ="/login">
+                    <mat-icon>exit_to_app</mat-icon>
+                    Ingresar
+                </a>
+            </div>
+            
+            <a *ngIf="isAdmin == 'admin'" mat-button routerLink= "/admin">Inicio</a>
+
+            <div *ngIf="!isLogged;" fxShow="true" fxHide.gt-sm="true">
+                <button mat-icon-button (click)="sidenav.toggle()">
+                    <mat-icon>menu</mat-icon>
+                </button>
+            </div>
+
+    </mat-toolbar>
+
+    <ng-template #viewLogout>
+        <a mat-button (click)="onLogout()">
+            <mat-icon>exit_to_app</mat-icon>
+            Salir
+        </a>
+    </ng-template>
+
+    <mat-sidenav #sidenav fxLayout="column" add fxHide.gt-sm="true" color="primary">
+        <div fxLayout="column">
+            <button mat-icon-button (click)="sidenav.toggle()">
+                <mat-icon>close</mat-icon>
+            </button>
+            <a mat-button routerLink="/">
+                <mat-icon>home</mat-icon>
+                Inicio
+            </a>
+
+            <a mat-button routerLink="/noticias">
+                <mat-icon>article</mat-icon>
+                Sala de prensa
+            </a>
+            <a mat-button routerLink="/tramites">
+                <mat-icon>notes</mat-icon>
+                Trámites y servicios
+            </a>
+            <a mat-button routerLink ="/login">
+                <mat-icon>exit_to_app</mat-icon>
+                Ingresar
+            </a>
+            
+        </div>
+    </mat-sidenav>
+
+</div>
+
+<style>
+
+    
+.mat-toolbar{
+  height: 7vh;
+}
+
+div {
+    overflow: inherit;
+}
+
+mat-sidenav{
+  background-color: #673ab7;
+  color: white;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+  }
+.ng-tns-c36-2{
+    align-items: baseline;
+}
+</style>

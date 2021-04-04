@@ -1,0 +1,96 @@
+<div class="container">
+    <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
+        <div class="col-md-6 px-0">
+          <h1 class="display-4"> Agendar cita: {{ titulo }} </h1>
+          <h5 class="badge badge-primary"> {{ depto }} </h5>
+        </div>
+    </div>
+    <div class="row">
+        <h3>Por favor, complente los siguientes campos correctamente.</h3>
+
+        <div class="col-md-8 modal-form" id="content">
+    
+            <form [formGroup]="citaForm.baseForm">
+                <input formControlName="id" matInput id="procedureId" name="id" [ngModel]="id">
+                <mat-form-field class="full-width-input">
+                    <mat-label>Nombre completo</mat-label>
+                    <input formControlName="name" matInput placeholder="Nombre completo">
+                </mat-form-field>
+    
+                  <mat-form-field class="full-width-input">
+                    <mat-label>Dirección</mat-label>
+                    <input formControlName="address" matInput placeholder="Dirección">
+                  </mat-form-field>
+    
+                  <mat-form-field class="full-width-input">
+                    <mat-label>Número de teléfono</mat-label>
+                    <input formControlName="telephone" matInput placeholder="Número de teléfono">
+                  </mat-form-field>
+    
+                <mat-form-field appearance="fill" class="full-width-input">
+                    <mat-label>Seleccione una fecha para su cita (Lunes a Viernes)</mat-label>
+                    <input formControlName="date" matInput [matDatepicker]="picker">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+    
+                <mat-form-field appearance="fill" class="full-width-input">
+                    <mat-label>Seleccione una hora (Atención de 9:00 a.m. a 3:00 p.m.)</mat-label>
+                    <input formControlName="hour" matInput [ngxTimepicker]="ngxTimepicker" readonly>
+                    <ngx-material-timepicker #ngxTimepicker></ngx-material-timepicker>
+                </mat-form-field>
+                <mat-form-field class="full-width-input">
+                    <mat-label> Nombre del trámite</mat-label>
+                    <input formControlName="procedureName" matInput [ngModel]="titulo" type="text">
+                </mat-form-field>
+                <mat-form-field class="full-width-input">
+                    <mat-label> Precio</mat-label>
+                    <input formControlName="price" matInput [ngModel]="price" type="text">
+                </mat-form-field>
+                
+                <mat-form-field class="full-width-input">
+                    <mat-label> Departamento</mat-label>
+                    <input formControlName="depto" matInput [ngModel]="depto">
+                </mat-form-field>
+                
+            </form>
+            
+            <button mat-raised-button color="primary" (click)="onOpenModal()" ckdFocusInitial>Agendar cita</button>
+        </div>
+    
+        <div class="col-md-4">
+            
+
+            <h2>Recomendaciones</h2>
+            
+            <div class="card" style="width: 18rem;">
+
+                <div class="card-body">
+
+                <ol>
+                    <li>
+                        Llegue puntualmente a su cita, de lo contrario, tendrá que agendar una nueva.
+                    </li>
+                    <li>
+                        Uso correcto y obligatorio de cubreboca.
+                    </li>
+                    <li>
+                        Guarde sana distancia en todo momento.
+                    </li>
+                    <li>
+                        Solo se permite la entrada a la persona que realiza el trámite.
+                    </li>
+                    <li>
+                        Evite ir acompañado/a de niños o adultos mayores.
+                    </li>
+                </ol>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+</div>

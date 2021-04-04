@@ -2,12 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>FrontV1</title>
+  <title>H. Ayuntamiento constitucional de Copalillo</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
+  <script src="https://js.stripe.com/v3/"></script>
 </head>
-<body>
+<body class="mat-typography">
   <app-root></app-root>
+
+  <script 
+    src="https://www.paypal.com/sdk/js?client-id=ATD7npPtmicEhuvMZvc4HWXd22JB4VTxsF2d7lPLfGVRviRqFjOe_FwUalIP7qWzIeRNfYkivd9DQPfw&currency=MXN">
+  </script>
+  <script type="text/javascript">
+      
+    const stripe = Stripe("pk_test_51IYd2rHJtr3G31VbOh6ucgC9mYJLrqDOCPvehvtD0ulgPK3u7NkVYkGUSidr7crwe1F5XBoI9KeCchz2GBEe9HMy00gJnrnfX2");
+  
+    const elements = stripe.elements();
+    
+  </script>
 </body>
 </html>

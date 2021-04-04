@@ -1,0 +1,23 @@
+.card img{
+    width: 100%;
+    height: 120px;
+}
+
+.list-news .card{
+    margin: auto 0;
+    margin-bottom: 1rem;
+
+    width: 90%;
+
+    -webkit-box-shadow: 9px 7px 12px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 9px 7px 12px 0px rgba(0,0,0,0.75);
+    box-shadow: 9px 7px 12px 0px rgba(0,0,0,0.75);
+}
+.new-button{
+    margin: 1rem;
+    width: 15%;
+}
+
+.button-row button{
+    margin: 8px;
+}

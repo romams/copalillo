@@ -1,0 +1,19 @@
+.jumbotron{
+    margin-top: 1rem;
+}
+.card{
+    width: 100%;
+}
+
+.card img{
+    width:100%;
+    height: 230px;
+}
+
+.notas{
+    margin: 1rem auto;
+}
+
+h2{
+    text-align: right;
+}

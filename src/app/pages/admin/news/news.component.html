@@ -1,0 +1,33 @@
+<div class="container">
+    
+    <div>
+        <button mat-flat-button color="primary" class="new-button" (click)="onOpenModal()">
+            <mat-icon>article</mat-icon>
+            Nuevo
+        </button>
+    </div>
+
+    
+    <div class="row">
+
+        <div class="col-md-3 list-news" *ngFor="let noticia of news | paginate: { itemsPerPage: 10, currentPage: p }">
+
+            <div class="card">
+                <img class="card-img-top" [src]="noticia.image" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title"> {{ noticia.title }} </h5>
+                </div>
+                <div class="card-body button-row">
+                    <button mat-flat-button color="accent" (click)="onOpenModal(noticia)">Editar</button>
+                    <button mat-flat-button color="warn" (click)="onDelete(noticia.id)">Eliminar</button>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+    <div class="row">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+<h3 mat-dialog-title>{{ data?.title }}</h3>
+<div #content id="datacontent">
+
+    <div class="card">
+      <img src="./../../../../../assets/logo_ayuntamiento.png" alt="">
+        <h2 class="title-ticket">Comprobante de cita</h2>
+        <div class="card-body">
+          <h5 class="card-title">Nombre: {{ nombre }}</h5>
+          <h5 class="card-title">Fecha: {{ fecha | date:'dd/MM/yyyy' }} </h5>
+          <h5 class="card-title">Hora: {{ hora }} </h5>
+          <h5 class="card-title">Oficina: {{ depto }} </h5>
+          <h6 class="card-subtitle mb-2 text-muted"></h6>
+          <p class="card-text">Presente este comprobante en el Oficina de tesoreria del Ayuntamiento para efectuar su pago.</p>
+
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Concepto</th>
+                <th scope="col">Monto</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th> 
+                <td> {{ procedureName }} </td>
+                <td> ${{ price }} </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p class="card-text">
+            Recuerde asistir a su cita con todas las medidas de seguridad ante el 
+            <i class="badge badge-danger">
+              #COVID-19.
+            </i>
+          </p>
+        </div>
+    </div>
+
+</div>

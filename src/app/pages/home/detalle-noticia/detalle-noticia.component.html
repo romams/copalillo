@@ -1,0 +1,49 @@
+<div class="container">
+    <!-- <p class="blog-post-meta"> {{ categoria }} by <a href="#">Mark</a></p> -->
+
+    <div class="row">
+        
+        <div class="col-lg-9 col-sm-12">
+    
+            <h1 class="titulo"> {{ title }} </h1><hr>
+
+            <img [src]="image" alt="" width="100%"><br><br>
+
+            <p> {{content}} </p>
+        </div>
+        
+        <div class="col-lg-3 col-sm-12" id="mas_noticias">  
+            <h2>También te puede interesar</h2>
+            <hr>
+
+
+            <div class="col-md-12 col-sm-12" *ngFor="let noticia of noticias">
+                <div class="card flex-md-row mb-4 box-shadow h-md-250">
+
+                    <img class="card-img-right flex-auto"  style="width: 100%; height: 100px;" [src]="noticia.image">
+                    
+                    <div class="title-caption">
+                      
+                      <a routerLink='/noticias/detalle/{{ noticia.id }}'><h4> {{noticia.title}} </h4></a>
+    
+                    </div>
+                  
+                </div>
+
+            </div>
+
+            <h2>Categorias</h2><hr>
+
+            <mat-chip-list aria-label="Fish selection">
+                <mat-chip 
+                color="primary" *ngFor="let cat of categorias" 
+                routerLink="/noticias/{{ cat.id }}/{{ cat.name }}"
+                selected> {{ cat.name }} </mat-chip>
+            </mat-chip-list>
+
+        </div>
+        
+    </div>
+
+</div>
+

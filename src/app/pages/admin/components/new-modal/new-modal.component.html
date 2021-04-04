@@ -1,0 +1,113 @@
+<button mat-icon-button class="close-button" [mat-dialog-close]="true">
+  <mat-icon class="close-icon" color="warn">close</mat-icon>
+</button>
+
+<h2 mat-dialog-title> {{ data?.title }}</h2>
+
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-md-4">
+
+      <h3>Imagen de portada</h3>
+      
+      <img [src]="image" width="100%"> <br/>
+      
+      <input type="file" name="file" id="file" class="inputfile" (change)="onFileChange($event)" />
+      <label *ngIf="!imgName; else imagename;" for="file" id="filename">Elige una imagen</label>
+      
+      <hr>
+
+      <button
+        mat-raised-button [mat-dialog-close]="true" (click)="onSave()" color="primary" ckdFocusInitial id="btn-save"> Guardar
+      </button>
+    </div>
+    
+    <div class="col-md-8">
+      
+      <form [formGroup]="newForm.baseForm">
+        <input formControlName="image" type="file" name="file" id="file" class="inputfile" (change)="onFileChange($event)" />
+        <input type="hidden" formControlName="userId" name="userId" [(ngModel)]="userId">
+        <div class="form-group">
+          <label class="control-label">Titulo</label>
+          <input type="text" class="form-control" formControlName="title" placeholder="Escriba un titulo" required />
+        </div> 
+
+        <div class="form-group">
+          <label class="control-label">Mensaje</label>
+          <textarea rows="10" class="form-control" formControlName="content" placeholder="Contenido" required ></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="control-label">Seleccione una etiqueta</label>
+          <select class="form-control" formControlName="categoryId">
+              <option *ngFor="let category of categories" [value]="category.id"> {{ category.name }} </option>
+          </select>
+        </div>
+
+      </form>
+      
+    </div>
+
+  </div>
+
+</div>
+<ng-template #imagename>
+  <label for="file"> {{ imgName }} </label>
+</ng-template>
+<!-- 
+<mat-dialog-content>
+
+  <div class="row">
+
+    <div class="col-md-12">
+      
+      <div class="modal-form">
+  
+          <form [formGroup]="newForm.baseForm">
+            <input formControlName="image" type="file" id="file" (change)="onFileChange($event)">
+  
+            <input type="hidden" formControlName="userId" name="userId" [(ngModel)]="userId">
+  
+            <mat-form-field class="full-width-input">
+                <mat-label>Titulo de la noticia</mat-label>
+                <input formControlName="title" matInput placeholder="Titulo">
+              </mat-form-field>
+            
+              <mat-form-field class="full-width-input">
+                <mat-label>Escribe algo</mat-label>
+                <textarea matInput formControlName="content" placeholder="Contenido" rows="15"></textarea>
+              </mat-form-field>
+  
+              <mat-form-field class="full-width-input">
+                  
+                  <mat-label>Select</mat-label>
+                  <mat-select formControlName="categoryId">
+                    <mat-option *ngFor="let category of categories"
+                    value="{{ category.id }}"> {{ category.name}} </mat-option>
+                  </mat-select>
+  
+              </mat-form-field>
+            </form>
+  
+      </div>
+
+    </div>
+
+  </div>
+  
+  
+</mat-dialog-content>
+
+
+<mat-dialog-actions align="end">
+
+    <button mat-button mat-dialog-close>Cancelar</button>
+
+    <button 
+        mat-raised-button [mat-dialog-close]="true" (click)="onSave()" color="primary" ckdFocusInitial> Guardar
+    </button>
+
+</mat-dialog-actions>
+ -->

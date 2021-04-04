@@ -1,0 +1,89 @@
+.modal-form .full-width-input{
+    width: 100%;
+}
+
+.button-margin{
+    margin: 1rem;;
+}
+
+#datacontent {
+    outline: 1px solid #673ab7;
+}
+i{
+    font-size: 12px;
+}
+.title-ticket{
+    margin: 0;
+    text-align: center;
+}
+img{
+    width: 40%;
+}
+#tesoreria-button{
+    width: 100%;
+}
+
+.credit-card{
+    width: 100%;
+    height: 85px;;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+h3, h2 {
+    padding:0;
+    margin: 0;
+}
+
+.hr-circle {
+    margin: 0;
+    border: 0;
+    text-align: center;
+    padding-bottom: 24px; 
+}
+
+.hr-circle::before {
+  content: "\2022 \2022 \2022 \2022";
+  font-size: 50px;
+  color: #4F8BCA;
+}
+
+.hr-text {
+    line-height: 1em;
+    position: relative;
+    outline: 0;
+    border: 0;
+    color: black;
+    text-align: center;
+    height: 1.5em;
+    opacity: 1.5;
+    margin: 15px;
+    margin-bottom: 0;
+  }
+
+  .hr-text::before {
+    content: '';
+    background: linear-gradient(to right, transparent, #818078, transparent);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+  }
+
+  .hr-text::after {
+    content: attr(data-content);
+    position: relative;
+    display: inline-block;
+    color: black;
+
+    padding: 0 .5em;
+    line-height: 1.5em;
+    color: #818078;
+    background-color: #fcfcfa;
+  }
+
+  #button-pay{
+      margin-top: 5px;
+  }

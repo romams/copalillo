@@ -1,0 +1,28 @@
+table{
+    width: 90%;
+    margin:0 auto;
+    margin-top: 1rem;
+
+}
+
+th.mat-sort-header-sorted{
+    color: black;
+}
+
+.table-button-row button{
+    margin: 12px;
+}
+
+.button-new{
+    width: 15%;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+#paginator-cita{
+    width: 90%;
+    margin-left: 5%;
+}

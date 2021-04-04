@@ -1,0 +1,145 @@
+<div class="jumbotron" id="img-background">
+  <div class="overlay"></div>
+  <div class="container">
+    <img src="../../../assets/logo_ayuntamiento.png" alt="logo_ayuntamiento_copalillo-gro" id="logo-home">
+  </div>
+</div>
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-12 col-sm-12">
+      <a (click)="coronaUrl()">
+        <img src="./../../../assets/banner-covid.png" alt="banner-covid" id="banner-covid">
+      </a>
+    </div>
+  </div>
+  <hr>
+    <h2 class="home-subtitle">Trámites</h2>
+
+    <div class="row">
+      
+      <div class="card procedure-card" style="width: 17rem;" *ngFor="let depto of deptos">
+        <a mat-flat-button routerLink="/tramites/buscar/{{depto.id}}">
+          <img class="card-img-top" [src]="depto.image" id="procedure-img">
+        </a>
+        <div class="card-header bg-info">
+          <a routerLink="/tramites/buscar/{{depto.id}}/{{depto.name}}"> {{ depto.name }} </a>
+        </div>
+      </div>
+
+    </div>
+
+    <hr>
+
+    <h2 class="home-subtitle">Últimas noticias</h2>
+    <div class="row">
+      <div class="col-lg-12 col-sm-12">
+
+          <div class="row">
+
+              <div class="col-md-6 col-sm-12" *ngFor="let noticia of noticias">
+                  <div class="card flex-md-row mb-4 box-shadow h-md-250">
+                    <div class="card-body d-flex flex-column align-items-start">
+                      <strong class="d-inline-block mb-2 text-primary">
+                        <mat-chip-list aria-label="Fish selection">
+                          <mat-chip routerLink='/noticias/{{ noticia.category?.id }}/{{ noticia.category?.name }}' color="primary" selected> {{ noticia.category?.name }} </mat-chip>
+                        </mat-chip-list>
+                        
+                      </strong>
+                      <h3 class="mb-0">
+                        <a class="text-dark" routerLink='/noticias/detalle/{{ noticia.id }}'> {{noticia.title}} </a>
+                      </h3>
+                      <div class="mb-1 text-muted"> {{ noticia.createAt | date:'dd/MM/yyyy' }} </div>
+                      <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+                    </div>
+                    <img class="card-img-right flex-auto d-none d-md-block"  style="width: 200px; height: 180px;" [src]="noticia.image">
+                  </div>
+              </div>
+
+          </div>
+              
+      </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <h3 class="home-subtitle">Misión</h3>
+      <p class="text-justify">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+        when an unknown printer took a galley of type and scrambled it to make a type 
+        specimen book. It has survived not only five centuries, but also the leap into 
+        electronic typesetting, remaining essentially unchanged. It was popularised in 
+        the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+        and more recently with desktop publishing software like Aldus PageMaker including 
+        versions of Lorem Ipsum.
+      </p>
+    </div>
+    <div class="col-md-6">
+      <h3 class="home-subtitle">Visión</h3>
+      <p class="text-justify">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+        when an unknown printer took a galley of type and scrambled it to make a type 
+        specimen book. It has survived not only five centuries, but also the leap into 
+        electronic typesetting, remaining essentially unchanged. It was popularised in 
+        the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+        and more recently with desktop publishing software like Aldus PageMaker including 
+        versions of Lorem Ipsum.
+      </p>
+    </div>
+  </div>
+
+  <hr>
+  <h2 class="home-subtitle">Contáctanos</h2>
+  <div class="row">
+    <div class="col-md-6">
+
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1364.7656294079948!2d-99.0413969964699!3d18.033328064913253!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cea56418c53e0b%3A0x3bfd584d5efbd38a!2sH.%20Ayuntamiento%20Municipal!5e0!3m2!1ses!2smx!4v1616186255309!5m2!1ses!2smx" 
+        width="100%" 
+        height="450" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy">
+      </iframe>
+
+    </div>
+    <div class="col-md-6">
+
+      <form  [formGroup]="contactForm.baseForm">
+        <div class="form-group">
+            <label class="control-label" for="Nombre">Nombres</label>
+            <input type="text" class="form-control" formControlName="name" placeholder="Introduzca su nombre" required />
+        </div>            
+        <div class="form-group">
+            <label class="control-label" for="Motivo">Motivo de Contacto</label>
+            <select name="Motivo" class="form-control" formControlName="reason">
+                <option value="Consulta General">Consulta General</option>
+                <option value="Queja">Queja</option>
+                <option value="Recomendación">Recomendación</option>
+                <option value="Informe un problema">Informe un problema</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="Correo">Dirección de Correo Electrónico</label>
+            <input type="email" class="form-control" formControlName="email" placeholder="Introduzca su correo electrónico" required />
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="Correo">Número de teléfono</label>
+          <input type=text class="form-control" formControlName="telephone" placeholder="Introduzca su numero de teléfono" required />
+      </div>
+        <div class="form-group">
+            <label class="control-label" for="Mensaje">Mensaje</label>
+            <textarea rows="5" cols="30" class="form-control" formControlName="content" placeholder="Introduzca su mensaje" required ></textarea>
+        </div>
+        <div class="form-group">                
+            <input class="btn btn-primary" value="Enviar" (click)="onSave()">
+            <input type="reset" class="btn btn-default" value="Limpiar">                
+        </div>
+      </form>
+      
+    </div>
+
+  </div>
+
+</div>
